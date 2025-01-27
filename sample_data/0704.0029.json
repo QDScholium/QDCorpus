@@ -1,0 +1,41 @@
+{
+    "id": "0704.0029",
+    "submitter": "Weizhen Deng",
+    "authors": "Zhan Shu, Xiao-Lin Chen and Wei-Zhen Deng",
+    "title": "Understanding the Flavor Symmetry Breaking and Nucleon Flavor-Spin\n  Structure within Chiral Quark Model",
+    "comments": null,
+    "journal-ref": "Phys.Rev.D75:094018,2007",
+    "doi": "10.1103/PhysRevD.75.094018",
+    "report-no": null,
+    "categories": "hep-ph",
+    "license": null,
+    "abstract": "  In $\\XQM$, a quark can emit Goldstone bosons. The flavor symmetry breaking in\nthe Goldstone boson emission process is used to intepret the nucleon\nflavor-spin structure. In this paper, we study the inner structure of\nconstituent quarks implied in $\\XQM$ caused by the Goldstone boson emission\nprocess in nucleon. From a simplified model Hamiltonian derived from $\\XQM$,\nthe intrinsic wave functions of constituent quarks are determined. Then the\nobtained transition probabilities of the emission of Goldstone boson from a\nquark can give a reasonable interpretation to the flavor symmetry breaking in\nnucleon flavor-spin structure.\n",
+    "versions": [
+        {
+            "version": "v1",
+            "created": "Sat, 31 Mar 2007 14:10:06 GMT"
+        },
+        {
+            "version": "v2",
+            "created": "Thu, 26 Apr 2007 08:27:20 GMT"
+        }
+    ],
+    "update_date": "2010-04-23",
+    "authors_parsed": [
+        [
+            "Shu",
+            "Zhan",
+            ""
+        ],
+        [
+            "Chen",
+            "Xiao-Lin",
+            ""
+        ],
+        [
+            "Deng",
+            "Wei-Zhen",
+            ""
+        ]
+    ]
+}

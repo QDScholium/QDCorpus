@@ -1,0 +1,27 @@
+{
+    "id": "0704.0010",
+    "submitter": "Sergei Ovchinnikov",
+    "authors": "Sergei Ovchinnikov",
+    "title": "Partial cubes: structures, characterizations, and constructions",
+    "comments": "36 pages, 17 figures",
+    "journal-ref": null,
+    "doi": null,
+    "report-no": null,
+    "categories": "math.CO",
+    "license": null,
+    "abstract": "  Partial cubes are isometric subgraphs of hypercubes. Structures on a graph\ndefined by means of semicubes, and Djokovi\\'{c}'s and Winkler's relations play\nan important role in the theory of partial cubes. These structures are employed\nin the paper to characterize bipartite graphs and partial cubes of arbitrary\ndimension. New characterizations are established and new proofs of some known\nresults are given.\n  The operations of Cartesian product and pasting, and expansion and\ncontraction processes are utilized in the paper to construct new partial cubes\nfrom old ones. In particular, the isometric and lattice dimensions of finite\npartial cubes obtained by means of these operations are calculated.\n",
+    "versions": [
+        {
+            "version": "v1",
+            "created": "Sat, 31 Mar 2007 05:10:16 GMT"
+        }
+    ],
+    "update_date": "2007-05-23",
+    "authors_parsed": [
+        [
+            "Ovchinnikov",
+            "Sergei",
+            ""
+        ]
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "id": "0704.0005",
+    "submitter": "Alberto Torchinsky",
+    "authors": "Wael Abu-Shammala and Alberto Torchinsky",
+    "title": "From dyadic $\\Lambda_{\\alpha}$ to $\\Lambda_{\\alpha}$",
+    "comments": null,
+    "journal-ref": "Illinois J. Math. 52 (2008) no.2, 681-689",
+    "doi": null,
+    "report-no": null,
+    "categories": "math.CA math.FA",
+    "license": null,
+    "abstract": "  In this paper we show how to compute the $\\Lambda_{\\alpha}$ norm, $\\alpha\\ge\n0$, using the dyadic grid. This result is a consequence of the description of\nthe Hardy spaces $H^p(R^N)$ in terms of dyadic and special atoms.\n",
+    "versions": [
+        {
+            "version": "v1",
+            "created": "Mon, 2 Apr 2007 18:09:58 GMT"
+        }
+    ],
+    "update_date": "2013-10-15",
+    "authors_parsed": [
+        [
+            "Abu-Shammala",
+            "Wael",
+            ""
+        ],
+        [
+            "Torchinsky",
+            "Alberto",
+            ""
+        ]
+    ]
+}

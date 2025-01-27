@@ -1,0 +1,32 @@
+{
+    "id": "0704.0030",
+    "submitter": "Jim Hague",
+    "authors": "J.P.Hague and N.d'Ambrumenil",
+    "title": "Tuning correlation effects with electron-phonon interactions",
+    "comments": "Reprint to improve access. 13 pages, 6 figures.",
+    "journal-ref": "J. Low. Temp. Phys. Vol. 140 pp77-89 (2005)",
+    "doi": "10.1007/s10909-005-6013-6",
+    "report-no": null,
+    "categories": "cond-mat.str-el",
+    "license": null,
+    "abstract": "  We investigate the effect of tuning the phonon energy on the correlation\neffects in models of electron-phonon interactions using DMFT. In the regime\nwhere itinerant electrons, instantaneous electron-phonon driven correlations\nand static distortions compete on similar energy scales, we find several\ninteresting results including (1) A crossover from band to Mott behavior in the\nspectral function, leading to hybrid band/Mott features in the spectral\nfunction for phonon frequencies slightly larger than the band width. (2) Since\nthe optical conductivity depends sensitively on the form of the spectral\nfunction, we show that such a regime should be observable through the low\nfrequency form of the optical conductivity. (3) The resistivity has a double\nkondo peak arrangement\n",
+    "versions": [
+        {
+            "version": "v1",
+            "created": "Sat, 31 Mar 2007 14:14:18 GMT"
+        }
+    ],
+    "update_date": "2015-05-13",
+    "authors_parsed": [
+        [
+            "Hague",
+            "J. P.",
+            ""
+        ],
+        [
+            "d'Ambrumenil",
+            "N.",
+            ""
+        ]
+    ]
+}

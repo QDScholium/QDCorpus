@@ -1,0 +1,31 @@
+{
+    "id": "0704.0018",
+    "submitter": "Andreas Gustavsson",
+    "authors": "Andreas Gustavsson",
+    "title": "In quest of a generalized Callias index theorem",
+    "comments": "20 pages, v2: an overall sign and typos corrected",
+    "journal-ref": null,
+    "doi": null,
+    "report-no": null,
+    "categories": "hep-th",
+    "license": null,
+    "abstract": "  We give a prescription for how to compute the Callias index, using as\nregulator an exponential function. We find agreement with old results in all\nodd dimensions. We show that the problem of computing the dimension of the\nmoduli space of self-dual strings can be formulated as an index problem in\neven-dimensional (loop-)space. We think that the regulator used in this Letter\ncan be applied to this index problem.\n",
+    "versions": [
+        {
+            "version": "v1",
+            "created": "Mon, 2 Apr 2007 08:58:27 GMT"
+        },
+        {
+            "version": "v2",
+            "created": "Sat, 21 Apr 2007 17:16:20 GMT"
+        }
+    ],
+    "update_date": "2007-05-23",
+    "authors_parsed": [
+        [
+            "Gustavsson",
+            "Andreas",
+            ""
+        ]
+    ]
+}

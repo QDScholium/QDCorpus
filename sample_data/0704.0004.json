@@ -1,0 +1,27 @@
+{
+    "id": "0704.0004",
+    "submitter": "David Callan",
+    "authors": "David Callan",
+    "title": "A determinant of Stirling cycle numbers counts unlabeled acyclic\n  single-source automata",
+    "comments": "11 pages",
+    "journal-ref": null,
+    "doi": null,
+    "report-no": null,
+    "categories": "math.CO",
+    "license": null,
+    "abstract": "  We show that a determinant of Stirling cycle numbers counts unlabeled acyclic\nsingle-source automata. The proof involves a bijection from these automata to\ncertain marked lattice paths and a sign-reversing involution to evaluate the\ndeterminant.\n",
+    "versions": [
+        {
+            "version": "v1",
+            "created": "Sat, 31 Mar 2007 03:16:14 GMT"
+        }
+    ],
+    "update_date": "2007-05-23",
+    "authors_parsed": [
+        [
+            "Callan",
+            "David",
+            ""
+        ]
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "id": "0704.0016",
+    "submitter": "Li Tong",
+    "authors": "Chao-Hsi Chang, Tong Li, Xue-Qian Li and Yu-Ming Wang",
+    "title": "Lifetime of doubly charmed baryons",
+    "comments": "17 pages, 3 figures and 1 table",
+    "journal-ref": "Commun.Theor.Phys.49:993-1000,2008",
+    "doi": "10.1088/0253-6102/49/4/38",
+    "report-no": null,
+    "categories": "hep-ph",
+    "license": null,
+    "abstract": "  In this work, we evaluate the lifetimes of the doubly charmed baryons\n$\\Xi_{cc}^{+}$, $\\Xi_{cc}^{++}$ and $\\Omega_{cc}^{+}$. We carefully calculate\nthe non-spectator contributions at the quark level where the Cabibbo-suppressed\ndiagrams are also included. The hadronic matrix elements are evaluated in the\nsimple non-relativistic harmonic oscillator model. Our numerical results are\ngenerally consistent with that obtained by other authors who used the diquark\nmodel. However, all the theoretical predictions on the lifetimes are one order\nlarger than the upper limit set by the recent SELEX measurement. This\ndiscrepancy would be clarified by the future experiment, if more accurate\nexperiment still confirms the value of the SELEX collaboration, there must be\nsome unknown mechanism to be explored.\n",
+    "versions": [
+        {
+            "version": "v1",
+            "created": "Sat, 31 Mar 2007 07:04:26 GMT"
+        }
+    ],
+    "update_date": "2008-12-18",
+    "authors_parsed": [
+        [
+            "Chang",
+            "Chao-Hsi",
+            ""
+        ],
+        [
+            "Li",
+            "Tong",
+            ""
+        ],
+        [
+            "Li",
+            "Xue-Qian",
+            ""
+        ],
+        [
+            "Wang",
+            "Yu-Ming",
+            ""
+        ]
+    ]
+}

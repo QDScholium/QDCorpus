@@ -1,0 +1,52 @@
+{
+    "id": "0704.0017",
+    "submitter": "Nceba Mhlahlo",
+    "authors": "Nceba Mhlahlo, David H. Buckley, Vikram S. Dhillon, Steven B. Potter,\n  Brian Warner and Patric A. Woudt",
+    "title": "Spectroscopic Observations of the Intermediate Polar EX Hydrae in\n  Quiescence",
+    "comments": "10 pages, 11 figures (figures 3, 4, 7 and 8 at reduced resolution,\n  originals available on request). Accepted for publication in Monthly Notices\n  of the Royal Astronomical Society",
+    "journal-ref": "Mon.Not.Roy.Astron.Soc.378:211-220,2007",
+    "doi": "10.1111/j.1365-2966.2007.11762.x",
+    "report-no": null,
+    "categories": "astro-ph",
+    "license": null,
+    "abstract": "  Results from spectroscopic observations of the Intermediate Polar (IP) EX Hya\nin quiescence during 1991 and 2001 are presented. Spin-modulated radial\nvelocities consistent with an outer disc origin were detected for the first\ntime in an IP. The spin pulsation was modulated with velocities near ~500-600\nkm/s. These velocities are consistent with those of material circulating at the\nouter edge of the accretion disc, suggesting corotation of the accretion\ncurtain with material near the Roche lobe radius. Furthermore, spin Doppler\ntomograms have revealed evidence of the accretion curtain emission extending\nfrom velocities of ~500 km/s to ~1000 km/s. These findings have confirmed the\ntheoretical model predictions of King & Wynn (1999), Belle et al. (2002) and\nNorton et al. (2004) for EX Hya, which predict large accretion curtains that\nextend to a distance close to the Roche lobe radius in this system. Evidence\nfor overflow stream of material falling onto the magnetosphere was observed,\nconfirming the result of Belle et al. (2005) that disc overflow in EX Hya is\npresent during quiescence as well as outburst. It appears that the hbeta and\nhgamma spin radial velocities originated from the rotation of the funnel at the\nouter disc edge, while those of halpha were produced due to the flow of\nmaterial along the field lines far from the white dwarf (narrow component) and\nclose to the white dwarf (broad-base component), in agreement with the\naccretion curtain model.\n",
+    "versions": [
+        {
+            "version": "v1",
+            "created": "Sat, 31 Mar 2007 07:38:48 GMT"
+        }
+    ],
+    "update_date": "2009-06-23",
+    "authors_parsed": [
+        [
+            "Mhlahlo",
+            "Nceba",
+            ""
+        ],
+        [
+            "Buckley",
+            "David H.",
+            ""
+        ],
+        [
+            "Dhillon",
+            "Vikram S.",
+            ""
+        ],
+        [
+            "Potter",
+            "Steven B.",
+            ""
+        ],
+        [
+            "Warner",
+            "Brian",
+            ""
+        ],
+        [
+            "Woudt",
+            "Patric A.",
+            ""
+        ]
+    ]
+}

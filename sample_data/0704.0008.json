@@ -1,0 +1,35 @@
+{
+    "id": "0704.0008",
+    "submitter": "Damian Swift",
+    "authors": "Damian C. Swift",
+    "title": "Numerical solution of shock and ramp compression for general material\n  properties",
+    "comments": "Minor corrections",
+    "journal-ref": "Journal of Applied Physics, vol 104, 073536 (2008)",
+    "doi": "10.1063/1.2975338",
+    "report-no": "LA-UR-07-2051, LLNL-JRNL-410358",
+    "categories": "cond-mat.mtrl-sci",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "abstract": "  A general formulation was developed to represent material models for\napplications in dynamic loading. Numerical methods were devised to calculate\nresponse to shock and ramp compression, and ramp decompression, generalizing\nprevious solutions for scalar equations of state. The numerical methods were\nfound to be flexible and robust, and matched analytic results to a high\naccuracy. The basic ramp and shock solution methods were coupled to solve for\ncomposite deformation paths, such as shock-induced impacts, and shock\ninteractions with a planar interface between different materials. These\ncalculations capture much of the physics of typical material dynamics\nexperiments, without requiring spatially-resolving simulations. Example\ncalculations were made of loading histories in metals, illustrating the effects\nof plastic work on the temperatures induced in quasi-isentropic and\nshock-release experiments, and the effect of a phase transition.\n",
+    "versions": [
+        {
+            "version": "v1",
+            "created": "Sat, 31 Mar 2007 04:47:20 GMT"
+        },
+        {
+            "version": "v2",
+            "created": "Thu, 10 Apr 2008 08:42:28 GMT"
+        },
+        {
+            "version": "v3",
+            "created": "Tue, 1 Jul 2008 18:54:28 GMT"
+        }
+    ],
+    "update_date": "2009-02-05",
+    "authors_parsed": [
+        [
+            "Swift",
+            "Damian C.",
+            ""
+        ]
+    ]
+}
