@@ -1,5 +1,5 @@
 import os
-from langchain_cohere import CohereEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from langchain_community.document_loaders import ArxivLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
@@ -35,7 +35,7 @@ text_splitter = RecursiveCharacterTextSplitter(
 
 class Indexer():
     def __init__(self, index_name = "scholium-index"): 
-        self.embeddings = CohereEmbeddings(model="embed-english-v3.0")
+        self.embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
         self.pc = Pinecone(api_key= pinecone_api_key)
 
         # Check if index exists
@@ -71,7 +71,7 @@ if __name__ == "__main__":
                 load_all_available_meta=True)
     # for page in pages:
     #     print(page.metadata)
-    vector_store = InMemoryVectorStore(CohereEmbeddings)
+    vector_store = InMemoryVectorStore(OpenAIEmbeddings)
     pages = []
     for page in arXivloader.lazy_load():
         pages.append(page)
