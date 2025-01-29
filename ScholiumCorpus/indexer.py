@@ -1,14 +1,11 @@
 import os
 from langchain_cohere import CohereEmbeddings
-from langchain_community.document_loaders import PyPDFLoader
-from langchain_community.document_loaders.generic import GenericLoader
-from langchain_community.document_loaders.parsers import GrobidParser
+from langchain_community.document_loaders import ArxivLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from pinecone import Pinecone
 from langchain_pinecone import PineconeVectorStore
-
-import asyncio
+from langchain_core.vectorstores import InMemoryVectorStore
 
 from dotenv import load_dotenv
 
@@ -18,21 +15,15 @@ load_dotenv()
 COHERE_API_KEY = os.environ.get("COHERE_API_KEY")
 pinecone_api_key = os.environ.get("PINECONE_API_KEY")
 
-async def _lazy_load_pdf(file_path):
-    loader = PyPDFLoader(file_path)
+def _lazy_load_pdf(file_path):
+    loader = ArxivLoader(
+                query= file_path,
+                load_max_docs=10,
+                load_all_available_meta=True)
     pages = []
-    async for page in loader.alazy_load():
+    for page in loader.lazy_load():
         pages.append(page)
     return pages
-
-def Grobid_Load(file_path):
-    loader = GenericLoader.from_filesystem(
-        "../Papers/",
-        glob="*",
-        suffixes=[".pdf"],
-        parser=GrobidParser(segment_sentences=False),
-    )
-    docs = loader.load()
 
 
 text_splitter = RecursiveCharacterTextSplitter(
@@ -57,19 +48,47 @@ class Indexer():
         self.vector_store = PineconeVectorStore(embedding=self.embeddings, index=self.index)
 
     def index_document(self, file_path):
-        pages = asyncio.run(_lazy_load_pdf(file_path))
+        pages = _lazy_load_pdf(file_path)
         all_splits = text_splitter.split_documents(pages)
         self.vector_store.add_documents(documents=all_splits)
 
+    def replace_none_values(d):
+        return {k: ('None' if v is None else v) for k, v in d.items()}
 
 if __name__ == "__main__":
-    file_path = os.path.join(os.path.dirname(__file__), "DistilBERT.pdf")
-    # pages = asyncio.run(_lazy_load_pdf(file_path))
-    # print(len(pages[3].page_content))
+    file_path = os.path.join(os.path.dirname(__file__), "CoT.pdf")
+    indexer = Indexer(index_name='test-index')
+    # pages = _lazy_load_pdf(file_path)
+    # print(pages[2])
+    # splits = text_splitter.split_documents(pages)
+    # print(splits[2])
+    # print(type(splits[2]))
+    # indexer.index_document(file_path)
+    # arXiv = _lazy_load_pdf("Chain of Thought")
+    arXivloader = ArxivLoader(
+                query= file_path,
+                load_max_docs=10,
+                load_all_available_meta=True)
+    # for page in pages:
+    #     print(page.metadata)
+    vector_store = InMemoryVectorStore(CohereEmbeddings)
+    pages = []
+    for page in arXivloader.lazy_load():
+        pages.append(page)
+    
+    for p in pages:
+        all_splits = text_splitter.split_documents(pages)
+        vector_store.add_documents(all_splits)
+    
+    # for pages in arXiv:
+    #     all_splits = text_splitter.split_documents(pages)
+    #     vector_store.add_documents(all_splits)
+    # print("Done!")
+
+
     # all_splits = text_splitter.split_documents(pages)
-    # splitcount = len(all_splits)
-    # print(f"Split page into {splitcount} sub-documents.")
-    indexer = Indexer()
-    indexer.index_document(file_path)
+    # print(all_splits[5].metadata)
+    # for split in all_splits:
+    #     print(type(split.metadata))
 
 

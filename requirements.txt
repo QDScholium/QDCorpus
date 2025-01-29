@@ -10,9 +10,7 @@ jq == 1.8.0
 pinecone == 5.4.2
 pypdf == 5.1.0
 
-supabase == 2.12.0
-psycopg == 3.2.4
-langchain-postgres == 0.0.12
-
-streamlit == 1.41.1
 python-dotenv == 1.0.1
+
+PyMuPDF == 1.25.2
+arxiv == 2.1.3
