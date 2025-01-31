@@ -2,10 +2,12 @@ import os
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.document_loaders import ArxivLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
 
 from pinecone import Pinecone
 from langchain_pinecone import PineconeVectorStore
 from langchain_core.vectorstores import InMemoryVectorStore
+from langchain_community.utilities.arxiv import ArxivAPIWrapper
 
 from dotenv import load_dotenv
 
@@ -25,12 +27,30 @@ def _lazy_load_pdf(file_path):
         pages.append(page)
     return pages
 
-
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=1000,  # chunk size (characters)
     chunk_overlap=200,  # chunk overlap (characters)
     add_start_index=True,  # track index in original document
 )
+
+def arXiv_search(query, max_docs=10):
+    '''
+    Loads the max_docs documents from arxiv.
+    Args:
+        query (str): The query to search for.
+        max_docs (int): The maximum number of documents to return.
+
+    Returns:
+        list[Document]: A list of documents
+    '''
+    # For some stupid reason, the ArxivLoader doesn't work?
+    client = ArxivAPIWrapper(
+        top_k_results = max_docs,
+        load_max_docs = max_docs,
+        load_all_available_meta = True,
+    )
+    return client.load(query=query)
+ 
 
 
 class Indexer():
@@ -47,48 +67,45 @@ class Indexer():
         
         self.vector_store = PineconeVectorStore(embedding=self.embeddings, index=self.index)
 
-    def index_document(self, file_path):
-        pages = _lazy_load_pdf(file_path)
-        all_splits = text_splitter.split_documents(pages)
-        self.vector_store.add_documents(documents=all_splits)
+    def index_documents(self, documents: list[Document]):   
+        try:
+            for doc in documents:
+                splits = text_splitter.split_documents([doc])
+                splits = self._replace_all_none_values(splits)
+                self.vector_store.add_documents(documents=splits)
+        except Exception as e:
+            print(f"Error indexing document: {e}")
+        
+    def _replace_none_values(self,d):
+        try:
+            for k, v in d.items():
+                if v is None:
+                    d[k] = "None"
+        except Exception as e:
+            print(f"Error replacing none values: {e}")
 
-    def replace_none_values(d):
-        return {k: ('None' if v is None else v) for k, v in d.items()}
+    def _replace_all_none_values(self, splits):
+        for split in splits:
+            self._replace_none_values(split.metadata)
+        return splits
+    
+    def index_query(self, query, max_docs=10):
+        documents = arXiv_search(query, max_docs)
+        self.index_documents(documents)
+
 
 if __name__ == "__main__":
-    file_path = os.path.join(os.path.dirname(__file__), "CoT.pdf")
-    indexer = Indexer(index_name='test-index')
-    # pages = _lazy_load_pdf(file_path)
-    # print(pages[2])
-    # splits = text_splitter.split_documents(pages)
-    # print(splits[2])
-    # print(type(splits[2]))
-    # indexer.index_document(file_path)
-    # arXiv = _lazy_load_pdf("Chain of Thought")
-    arXivloader = ArxivLoader(
-                query= file_path,
-                load_max_docs=10,
-                load_all_available_meta=True)
-    # for page in pages:
-    #     print(page.metadata)
-    vector_store = InMemoryVectorStore(OpenAIEmbeddings)
-    pages = []
-    for page in arXivloader.lazy_load():
-        pages.append(page)
-    
-    for p in pages:
-        all_splits = text_splitter.split_documents(pages)
-        vector_store.add_documents(all_splits)
-    
-    # for pages in arXiv:
-    #     all_splits = text_splitter.split_documents(pages)
-    #     vector_store.add_documents(all_splits)
-    # print("Done!")
-
-
-    # all_splits = text_splitter.split_documents(pages)
-    # print(all_splits[5].metadata)
-    # for split in all_splits:
-    #     print(type(split.metadata))
-
+    vector_store = InMemoryVectorStore(OpenAIEmbeddings())
+    num_docs = 10
+    query = "Chain of Thought Prompting"
+    documents = arXiv_search(query, num_docs )
+    assert len(documents) == num_docs
+    indexer = Indexer("test-index")
+    indexer._replace_all_none_values(documents)
+    for doc in documents:
+        for k, v in doc.metadata.items():
+            if v is None:
+                raise ValueError(f"Metadata value is None for key: {k}")
+    print("Metadata is valid")
+    indexer.index_query(query=query,max_docs=num_docs)
 
