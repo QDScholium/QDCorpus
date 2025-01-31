@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "ScholiumCorpus"
 version = "0.1.0"
-description = "The model behind Scholium"
+description = "Responsible for handling Scholium's dataset"
 authors = [
     { name="Sunny Wan", email="Sunnywan2020@gmail.com" }
 ]

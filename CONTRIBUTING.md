@@ -16,16 +16,6 @@ Installing the package in development mode:
 pip install . -e
 ```
 
-### Building Frontend Locally. 
-
-To set up the chat locally:
-```shell
-
-cd ScholiumModel
-streamlit run chat.py
-
-```
-
 
 ### 1. Fork & clone
 - Click on the Fork button on GitHub
