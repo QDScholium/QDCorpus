@@ -14,7 +14,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-COHERE_API_KEY = os.environ.get("COHERE_API_KEY")
 pinecone_api_key = os.environ.get("PINECONE_API_KEY")
 
 def _lazy_load_pdf(file_path):
@@ -28,8 +27,8 @@ def _lazy_load_pdf(file_path):
     return pages
 
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000,  # chunk size (characters)
-    chunk_overlap=200,  # chunk overlap (characters)
+    chunk_size=512,  # chunk size (characters)
+    chunk_overlap=20,  # chunk overlap (characters)
     add_start_index=True,  # track index in original document
 )
 
@@ -96,8 +95,8 @@ class Indexer():
 
 if __name__ == "__main__":
     vector_store = InMemoryVectorStore(OpenAIEmbeddings())
-    num_docs = 10
-    query = "Chain of Thought Prompting"
+    num_docs = 100
+    query = "Transformers"
     documents = arXiv_search(query, num_docs )
     assert len(documents) == num_docs
     indexer = Indexer("test-index")

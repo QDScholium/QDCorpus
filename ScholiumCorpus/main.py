@@ -5,7 +5,7 @@ queries = ["Attention Based Transformers", "Encoder-Decoder Models",
             "Positional Encoding", "Positional Embedding", "LLaMA", "GPT","Large Language Models"]
 
 max_docs = 100
-index_name = "scholium-index"
+index_name = "test-index"
 
 indexer = Indexer(index_name)
 for query in queries:
